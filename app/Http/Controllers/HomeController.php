@@ -22,7 +22,10 @@ class HomeController extends Controller
         $client = $driver->session();
 
         $result = $client->run("MATCH path = (n)-[r]->(m) RETURN path ORDER BY n.created_date DESC LIMIT 40");
-        return json_encode($result->getRecords());
+        foreach ($result->getRecords() as $record) {
+            echo $record->value('path');
+        }
+;
     }
     
 }
