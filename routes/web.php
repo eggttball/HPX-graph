@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect()->action('HomeController@index');
-});
+Route::get('/', 'HomeController@index');
