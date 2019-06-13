@@ -22,7 +22,7 @@ class HomeController extends Controller
         $client = $driver->session();
 
         $result = $client->run("MATCH (n:Book) RETURN n.name LIMIT 25");
-        return 'test';
+        return $result;
     }
     
 }
