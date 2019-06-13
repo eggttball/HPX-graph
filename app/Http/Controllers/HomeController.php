@@ -21,7 +21,7 @@ class HomeController extends Controller
         $driver = \GraphAware\Bolt\GraphDatabase::driver($url, $config);
         $client = $driver->session();
 
-        $result = $client->run("MATCH (n:Book) RETURN n LIMIT 25");
+        $result = $client->run("MATCH (n:Book) RETURN n.name LIMIT 25");
         return 'test';
     }
     
