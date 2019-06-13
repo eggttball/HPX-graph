@@ -21,7 +21,7 @@ class HomeController extends Controller
         $driver = \GraphAware\Bolt\GraphDatabase::driver($url, $config);
         $client = $driver->session();
 
-        $result = $client->run("MATCH path = (n)-[r]->(m) RETURN path ORDER BY n.created_date DESC LIMIT 40");
+        $result = $client->run("MATCH (n:Book) RETURN n LIMIT 25");
         return 'test';
     }
     
